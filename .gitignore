@@ -1,0 +1,19 @@
+# compiled binaries (the cpp-run task builds files with no extension)
+*
+!*/
+!*.*
+!.gitignore
+
+*.out
+*.exe
+*.o
+
+# build / run files
+compile.log
+input.txt
+output.txt
+
+# os / editor junk
+.DS_Store
+Thumbs.db
+__pycache__/

@@ -1,0 +1,18 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "cpp-run",
+            "type": "process",
+            "command": "bash",
+            "args": [
+                "-c",
+                "printf '[ COMPILING ]\\n\\n' > output.txt && g++ -std=c++17 '${file}' -o '${fileDirname}/${fileBasenameNoExtension}' > compile.log 2>&1; if [ $? -ne 0 ]; then printf '[ COMPILETIME ERROR ]\\n\\n' >> output.txt && cat compile.log >> output.txt; else printf '[ RUNNING ]\\n\\n' > output.txt && start=$(date +%s%3N) && timeout 10s '${fileDirname}/${fileBasenameNoExtension}' < input.txt >> output.txt 2>&1; code=$?; end=$(date +%s%3N); runtime=$((end-start)); if [ $code -eq 124 ]; then printf '\\n[ TLE (Time Limit Exceeded) ]\\n' >> output.txt; elif [ $code -eq 139 ]; then printf '\\n[ RUNTIME ERROR (Segmentation Fault) ]\\n' >> output.txt; elif [ $code -eq 134 ]; then printf '\\n[ RUNTIME ERROR (Abort) ]\\n' >> output.txt; elif [ $code -ne 0 ]; then printf '\\n[ RUNTIME ERROR (Exit Code: %s) ]\\n' \"$code\" >> output.txt; else printf '\\n\\n[ COMPLETED ]\\n' >> output.txt; fi; printf '\\n[ FINISHED in %s ms ]\\n' \"$runtime\" >> output.txt; fi"
+            ],
+            "presentation": {
+                "reveal": "never"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
