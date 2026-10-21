@@ -4,8 +4,9 @@ solving DSA questions on graphs to increase my chances of cracking interviews (-
 
 ### [🌸 Everything All At Once (～￣▽￣)～](./EVERYTHING_ALL_AT_ONCE.md)
 
+<details>
+<summary><h2> 🚁 Run locally on your machine </h2> </summary>
 
-# Run locally on your machine
 
 ### Prerequisites
 
@@ -67,7 +68,10 @@ solving DSA questions on graphs to increase my chances of cracking interviews (-
 - Open any `.cpp` file, put your input in `input.txt`, and press `Ctrl+Shift+F12`.
 - `output.txt` shows the output, plus compile errors, TLE (10s), runtime errors, and how long it ran.
 
-### Build the all-in-one page
+</details>
+
+<details>
+<summary><h2> 🏗️ Build the all-in-one page </h2> </summary>
 
 ```bash
 python3 build.py
@@ -83,3 +87,5 @@ lefthook install
 ```
 
 The hook (`lefthook.yml`) runs `python3 build.py` and adds the regenerated `EVERYTHING_ALL_AT_ONCE.md` to the commit.
+
+</details>
