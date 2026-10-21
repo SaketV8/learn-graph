@@ -74,3 +74,12 @@ python3 build.py
 ```
 
 This regenerates `EVERYTHING_ALL_AT_ONCE.md` with the code from every folder.
+
+To run it automatically before every commit, install the [lefthook](https://github.com/evilmartians/lefthook) git hook once (needs Node.js):
+
+```bash
+npm i -g lefthook
+lefthook install
+```
+
+The hook (`lefthook.yml`) runs `python3 build.py` and adds the regenerated `EVERYTHING_ALL_AT_ONCE.md` to the commit.

@@ -1,0 +1,5 @@
+# regenerate EVERYTHING_ALL_AT_ONCE.md before every commit and include it in the commit
+pre-commit:
+  commands:
+    build:
+      run: python3 build.py && git add EVERYTHING_ALL_AT_ONCE.md
